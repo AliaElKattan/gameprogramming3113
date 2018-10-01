@@ -86,6 +86,10 @@
     <None Include="fragment_textured.glsl" />
     <None Include="vertex.glsl" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\CS3113\assets\graphics\Physics assets (330 assets)\PNG\Stone elements\elementStone021.png" />
+    <Image Include="sample_image.JPG" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

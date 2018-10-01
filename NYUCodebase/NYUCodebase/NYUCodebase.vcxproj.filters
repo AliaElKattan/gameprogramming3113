@@ -32,4 +32,8 @@
     <None Include="fragment_textured.glsl" />
     <None Include="fragment.glsl" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="sample_image.JPG" />
+    <Image Include="..\..\..\CS3113\assets\graphics\Physics assets (330 assets)\PNG\Stone elements\elementStone021.png" />
+  </ItemGroup>
 </Project>
