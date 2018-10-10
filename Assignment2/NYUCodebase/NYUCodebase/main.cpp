@@ -7,7 +7,7 @@ POSITION RESTARTS WHEN BALL GOES OUT OF BOUNDS.
 
 EACH PLAYER GAINS A POINT WHEN THEY HIT THE BALL, AND WHEN THE OPPONENT LOSES IT.
 
-
+PROGRAM SHOWS RED WHEN PLAYER 1 LOSES (MISSES), AND BLUE WHEN PLAYER 1 LOSES.
 */
 
 #ifdef _WINDOWS
@@ -85,11 +85,12 @@ int main(int argc, char *argv[])
 
 	float ball_x = 0;
 	float ball_y = 0;
-	float ballSpeedy = elapsed * .002;
-	float ballSpeedx = elapsed * .002;
+	float ballSpeedy = elapsed * .003;
+	float ballSpeedx = elapsed * .003;
 	int player1Score = 0;//SCOREKEEPING
 	int player2Score = 0;
 
+	glClearColor(.91f, .91f, 1.f, 1.0f);
 	glEnable(GL_BLEND);
 
     SDL_Event event;
@@ -101,15 +102,12 @@ int main(int argc, char *argv[])
 			}
 		}
 
-	
-
+		
+		glClear(GL_COLOR_BUFFER_BIT);
 
 		untext_program.SetModelMatrix(modelMatrix);
 		untext_program.SetProjectionMatrix(projectionMatrix);
 		untext_program.SetViewMatrix(viewMatrix);
-
-		glClearColor(.91f, .91f, 1.f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
 
 		untext_program.SetColor(0.0f, 0.0f, 0.0f, 1.f);
 
@@ -186,14 +184,6 @@ int main(int argc, char *argv[])
 
 		//ball
 
-		/*modelMatrix = glm::scale(modelMatrix, glm::vec3(0.0f, 0.0f, 0.0f));
-		untext_program.SetModelMatrix(modelMatrix);
-*/
-//untext_program.SetColor(0.0f, 0.0f, 0.0f, 1.f);
-
-
-
-
 		ball_x += ballSpeedx;
 		ball_y += ballSpeedy;
 
@@ -231,6 +221,8 @@ int main(int argc, char *argv[])
 				ball_x = 0;
 				ball_y = 0;
 				player2Score++; //INCREASE PLAYER 1'S SCORE
+				glClearColor(.7f, .3f, .3f, 1.0f);
+				glClear(GL_COLOR_BUFFER_BIT);
 			
 			} 
 			
@@ -239,6 +231,8 @@ int main(int argc, char *argv[])
 				ball_x = 0;
 				ball_y = 0;
 				player1Score++; //INCREASE PLAYER 2'S SCORE
+				glClearColor(.3f, .3f, .7f, 1.0f);
+				glClear(GL_COLOR_BUFFER_BIT);
 
 			}
 		
