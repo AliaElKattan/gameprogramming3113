@@ -1,0 +1,12 @@
+﻿  main.cpp
+c:\users\aliae\desktop\gameprogramming3113\assignment3\nyucodebase\nyucodebase\main.cpp(193): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\aliae\desktop\gameprogramming3113\assignment3\nyucodebase\nyucodebase\main.cpp(194): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\aliae\desktop\gameprogramming3113\assignment3\nyucodebase\nyucodebase\main.cpp(202): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\aliae\desktop\gameprogramming3113\assignment3\nyucodebase\nyucodebase\main.cpp(220): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\aliae\desktop\gameprogramming3113\assignment3\nyucodebase\nyucodebase\main.cpp(222): warning C4305: '-=': truncation from 'double' to 'float'
+c:\users\aliae\desktop\gameprogramming3113\assignment3\nyucodebase\nyucodebase\main.cpp(71): warning C4101: 'enemyammo_y': unreferenced local variable
+c:\users\aliae\desktop\gameprogramming3113\assignment3\nyucodebase\nyucodebase\main.cpp(70): warning C4101: 'enemyammo_x': unreferenced local variable
+c:\users\aliae\desktop\gameprogramming3113\assignment3\nyucodebase\nyucodebase\main.cpp(189): warning C4101: 'elapsed2': unreferenced local variable
+c:\users\aliae\desktop\gameprogramming3113\assignment3\nyucodebase\nyucodebase\main.cpp(324): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\aliae\desktop\gameprogramming3113\assignment3\nyucodebase\nyucodebase\main.cpp(325): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  NYUCodebase.vcxproj -> C:\Users\aliae\Desktop\gameprogramming3113\Assignment3\NYUCodebase\Debug\NYUCodebase.exe
