@@ -61,7 +61,21 @@ public:
 	bool isAlive = true;
 };
 
+class GameState {
+public:
+	Entity player;
+	Entity enemies[10][5];
 
+	//bullets
+
+	int score;
+};
+
+GameState state;
+
+void RenderGame(const GameState &state) {
+
+}
 
 int main(int argc, char *argv[])
 {
@@ -111,8 +125,8 @@ int main(int argc, char *argv[])
 	//int state = 0;
 
 	GLuint spritesheet = LoadTexture(RESOURCE_FOLDER"characters_1.png");
-	Entity player;
-	Entity enemies[10][5];
+	/*Entity player;
+	Entity enemies[10][5];*/
 	Bullet ammo;
 	Bullet enemyammo[10][5];
 	SDL_Event event;
