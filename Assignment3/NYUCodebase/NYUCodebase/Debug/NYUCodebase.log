@@ -1,16 +1,9 @@
 ﻿  main.cpp
-c:\users\aliae\desktop\gameprogramming3113\assignment3 - copy\nyucodebase\nyucodebase\main.cpp(201): error C2065: 'player': undeclared identifier
-c:\users\aliae\desktop\gameprogramming3113\assignment3 - copy\nyucodebase\nyucodebase\main.cpp(208): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\aliae\desktop\gameprogramming3113\assignment3 - copy\nyucodebase\nyucodebase\main.cpp(209): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\aliae\desktop\gameprogramming3113\assignment3 - copy\nyucodebase\nyucodebase\main.cpp(217): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\aliae\desktop\gameprogramming3113\assignment3 - copy\nyucodebase\nyucodebase\main.cpp(226): error C2065: 'enemies': undeclared identifier
-c:\users\aliae\desktop\gameprogramming3113\assignment3 - copy\nyucodebase\nyucodebase\main.cpp(228): error C2065: 'enemies': undeclared identifier
-c:\users\aliae\desktop\gameprogramming3113\assignment3 - copy\nyucodebase\nyucodebase\main.cpp(229): error C2065: 'enemies': undeclared identifier
-c:\users\aliae\desktop\gameprogramming3113\assignment3 - copy\nyucodebase\nyucodebase\main.cpp(234): error C2065: 'enemies': undeclared identifier
-c:\users\aliae\desktop\gameprogramming3113\assignment3 - copy\nyucodebase\nyucodebase\main.cpp(236): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\aliae\desktop\gameprogramming3113\assignment3 - copy\nyucodebase\nyucodebase\main.cpp(238): warning C4305: '-=': truncation from 'double' to 'float'
-c:\users\aliae\desktop\gameprogramming3113\assignment3 - copy\nyucodebase\nyucodebase\main.cpp(240): error C2065: 'enemies': undeclared identifier
-c:\users\aliae\desktop\gameprogramming3113\assignment3 - copy\nyucodebase\nyucodebase\main.cpp(340): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\aliae\desktop\gameprogramming3113\assignment3 - copy\nyucodebase\nyucodebase\main.cpp(341): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  ShaderProgram.cpp
-  Generating Code...
+c:\users\aliae\desktop\gameprogramming3113\assignment3\nyucodebase\nyucodebase\main.cpp(233): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\aliae\desktop\gameprogramming3113\assignment3\nyucodebase\nyucodebase\main.cpp(241): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\aliae\desktop\gameprogramming3113\assignment3\nyucodebase\nyucodebase\main.cpp(265): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\aliae\desktop\gameprogramming3113\assignment3\nyucodebase\nyucodebase\main.cpp(81): warning C4101: 'maxrow': unreferenced local variable
+c:\users\aliae\desktop\gameprogramming3113\assignment3\nyucodebase\nyucodebase\main.cpp(423): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\aliae\desktop\gameprogramming3113\assignment3\nyucodebase\nyucodebase\main.cpp(424): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\aliae\desktop\gameprogramming3113\assignment3\nyucodebase\nyucodebase\main.cpp(474): warning C4018: '<': signed/unsigned mismatch
+  NYUCodebase.vcxproj -> C:\Users\aliae\Desktop\gameprogramming3113\Assignment3\NYUCodebase\Debug\NYUCodebase.exe
