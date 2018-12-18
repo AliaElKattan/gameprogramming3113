@@ -165,7 +165,7 @@ int main(int argc, char *argv[])
 
 	Plank rain[5], rain2[5];
 
-	//set them with a for loop
+	//set them with a for loop instead
 	rain[0].xposition = -1;
 	rain[1].xposition = -.7;
 	rain[2].xposition = -.4;
@@ -194,11 +194,9 @@ int main(int argc, char *argv[])
 
 
 
-
-
 	SDL_Event event;
 
-	int bullindex = 0;
+	
 	float lastFrameTicks = 0.0f;
 	bool done = false;
 	while (!done) {
@@ -215,6 +213,8 @@ int main(int argc, char *argv[])
 
 		}
 
+
+		//change background color depending on screen
 		if (gameState == 0) {
 			glClearColor(0.09f, 0.09f, .09f, 1.0f); //BACKGROUND COLOUR
 			glClear(GL_COLOR_BUFFER_BIT);
@@ -252,12 +252,12 @@ int main(int argc, char *argv[])
 
 		const Uint8 *keys = SDL_GetKeyboardState(NULL);
 
-
+		//press Q to exit
 		if (keys[SDL_SCANCODE_Q]) {
 			exit(0);
 		}
 
-
+		//title screen
 		if (gameState == 0) {
 
 			if (keys[SDL_SCANCODE_SPACE]) {
@@ -292,12 +292,7 @@ int main(int argc, char *argv[])
 
 		}
 
-		if (gameState == 1) {
-
-			
-
-			
-
+		if (gameState == 1) { //game on
 			
 				glBindTexture(GL_TEXTURE_2D, spritesheet);
 			modelMatrix = glm::mat4(1.0f);
@@ -307,7 +302,7 @@ int main(int argc, char *argv[])
 				if (playerx > -1.7f)
 					playerx -= elapsed;
 
-				modelMatrix = glm::translate(modelMatrix, glm::vec3(playerx, playery, 1.0f));
+				modelMatrix = glm::translate(modelMatrix, glm::vec3(playerx, playery, 1.0f)); //have this multiple times to change the sprite depending on the direction of movement
 				textured_program.SetModelMatrix(modelMatrix);
 				player.DrawSprite(textured_program, 77, 12, 8);
 				// go left
@@ -323,7 +318,7 @@ int main(int argc, char *argv[])
 				player.DrawSprite(textured_program, 17, 12, 8);
 			}
 
-
+			//if standing
 			else {//draw player 1
 				modelMatrix = glm::translate(modelMatrix, glm::vec3(playerx, playery, 1.0f));
 				textured_program.SetModelMatrix(modelMatrix);
@@ -352,6 +347,7 @@ int main(int argc, char *argv[])
 				player2.DrawSprite(textured_program, 20, 12, 8);
 			}
 
+			//if standing
 			else {
 				//draw player 2
 				modelMatrix = glm::mat4(1.0f);
@@ -361,33 +357,24 @@ int main(int argc, char *argv[])
 			}
 
 
-			//else {//draw player 1
-			//	modelMatrix = glm::translate(modelMatrix, glm::vec3(playerx, playery, 1.0f));
-			//	textured_program.SetModelMatrix(modelMatrix);
-			//	player.DrawSprite(textured_program, 65, 12, 8);
-			//}
-
-
-			////draw player 2
-			//modelMatrix = glm::mat4(1.0f);
-			//modelMatrix = glm::translate(modelMatrix, glm::vec3(playerx2, playery2, 1.0f));
-			//textured_program.SetModelMatrix(modelMatrix);
-			//player2.DrawSprite(textured_program, 68, 12, 8);
-
-
 			//plank
 
-			plank.xposition = (playerx + playerx2) / 2;
-
-			plankx_r = plank.xposition + .3f;
-			plankx_l = plank.xposition - .3f;
+			plank.xposition = (playerx + playerx2) / 2; //center plank between both players
 
 
+			plankx_r = plank.xposition + .3f; //right edge of plank
+			plankx_l = plank.xposition - .3f;//left edge of plank
+
+
+			//if plank is landed on both players
 			if (plank.isLanded(playerx, playery) == true && plank.isLanded(playerx2, playery) == true) { //this is added for testing
 				//dont fall
 				/*untext_program.SetColor(1.f, 0.f, 1.f, 1.0f);*/
 			}
 
+			//if plank isnt touching either player
+
+			//this used to be 1 function that checks if its touching both, but wanted to separate it for clarity
 			if (plank.isLanded(playerx, playery) == false && plank.isLanded(playerx2, playery) == false) { //this is added for testing
 			//fall
 				plank.yposition -= elapsed * 1.5;
@@ -397,6 +384,7 @@ int main(int argc, char *argv[])
 			modelMatrix = glm::translate(modelMatrix, glm::vec3(plank.xposition, plank.yposition, 1.0f));
 
 
+			//if players are too close to each other (plank not balanced)
 			if (abs(playerx - playerx2) < .15) {
 				degrees -= .05;
 			}
@@ -412,9 +400,10 @@ int main(int argc, char *argv[])
 			//}
 
 
+			//if players are a bit farther away from each other (plank balanced)
+			
 			if (abs(playerx - playerx2) > .15) {
-
-				
+								
 				if (degrees > 0) {
 					//degrees += elapsed * 4;
 					degrees -= .05;
@@ -448,7 +437,7 @@ int main(int argc, char *argv[])
 
 			modelMatrix = glm::mat4(1.0f);
 
-
+			//box is placed on plank, box_xmovement & box_ymovement are what makes it slide
 			box.xposition = plank.xposition + box_xmovement;
 
 			if (box.xposition < plankx_r && box.xposition> plankx_l) { //if box is on plank
@@ -457,7 +446,8 @@ int main(int argc, char *argv[])
 
 
 			//tan(angle) = opposite/adjacent, which means y = tan(angle)x. as a ratio, x is 1, so I don't multiply by it
-			
+			//reverse movement when users start balancing the plank
+
 			if (abs(playerx - playerx2) <.15) {
 				if (degrees < 0) {
 					box_ymovement += ((elapsed * .26 * -angle) * tan(angle));  //multiplying by the angle so the speed of movement is dependent on how big the angle is
